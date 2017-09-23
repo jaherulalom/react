@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   font-family: ${props => props.theme.everydayFont}
-  background: ${props => props.login ? '#37b4fd' : '#ff323c'};
+  background: ${props => props.login ? 'lightgrey' : 'lightgrey'};
   border: none;
-  border-radius: 2px;
+  border-radius: 30px;
   color: #fff;
   font-size: 16px;
   margin-top: 20px;
@@ -14,6 +14,7 @@ export const Button = styled.button`
   display: block;
   width: 290px;
   outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   &:active {
     box-shadow: inset 0 0 0 1px #27496d, inset 0 5px 30px #277fb2

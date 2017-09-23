@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const LoginWrapper = styled.div`
+const AppWrapper = styled.div`
 font-family: ${props => props.theme.heroFont}
   background-color: #6A6464;
   display: flex;
@@ -10,4 +10,4 @@ font-family: ${props => props.theme.heroFont}
   width: auto;
 `;
 
-export default LoginWrapper;
+export default AppWrapper;

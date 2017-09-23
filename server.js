@@ -9,7 +9,7 @@ app.get('/bundle*', function (req, res) {
   fs = require('fs');
   fs.readFile(__dirname + '/build/' + files['bundle.js'], 'utf8', function (err, data) {
     res.send(data
-             .replace('%%API_ENDPOINT%%', process.env.API_ENDPOINT ||'http://127.0.0.1:8000/')
+             .replace('%%API_ENDPOINT%%', process.env.API_ENDPOINT ||'http://localhost:8000/')
              .replace('%%ENVIRONMENT%%', process.env.ENVIRONMENT || 'dev')
             );
   });

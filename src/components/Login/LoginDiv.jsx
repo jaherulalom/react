@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const styles = styled.div`
-  background-color: black;
+  background-color: #6A6464;
   border-radius: 5px;
   color: #ffffff;
 

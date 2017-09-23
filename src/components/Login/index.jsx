@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import logoImg from '../../assets/png/logo.png';
 import LoginDiv from './LoginDiv';
 import LoginWrapper from './LoginWrapper';
 import Image from '../../components/common/Images';
@@ -22,6 +23,7 @@ export class Login extends React.Component {
     return (
       <LoginWrapper>
         <LoginDiv>
+          <Image src={logoImg} />
           <LoginForm onSubmit={this.submitForm} />
         </LoginDiv>
       </LoginWrapper>

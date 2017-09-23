@@ -12,7 +12,7 @@ export const LoginForm = (props) => {
       <TextField
         name="email"
         type="text"
-        label="Email"
+        label="email"
         placeholder="Email"
       /><br />
       <TextField

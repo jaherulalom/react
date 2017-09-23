@@ -3,24 +3,33 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { redirect } from '../../actions/routeActions';
 import { Content } from '../../components/common/Content/Content';
-import { getServices } from '../../actions/userActions';
+import  AppWrapper from '../../components/common/Content/AppWrapper';
+import Appointments from '../../components/Appointments/index';
+import Button from '../../components/common/Button';
 
+import Header from '../Header/Header';
 
 export class Domain extends React.Component {
 
-  componentWillMount() {
-    this.props.getServices();
-  }
-  componentWillReceiveProps(nextProps){
-  }
-  componentWillUnmount() {
-  }
+
+  onClick = (newLocation) => (
+    () => {
+      this.props.redirect(`/bookings`)
+    }
+  )
 
   render() {
     return (
+
       <Content>
-          <h1>hello</h1>
+        <Header />
+          <h1>Welcome</h1>
+          <Appointments />
+          <Button onClick={this.onClick()}>Make a booking</Button>
+          <Button>Manage booking</Button>
+          <Button>Contact</Button>
       </Content>
+
     );
   }
 }
@@ -30,7 +39,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getServices,
+  redirect,
 };
 
 export default connect(

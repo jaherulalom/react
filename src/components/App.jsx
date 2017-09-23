@@ -7,9 +7,13 @@ import { getSession } from '../actions/userActions';
 import { ThemeProvider } from 'styled-components';
 import FullScreen from './common/Content/FullScreen';
 import Header from '../components/Header/Header';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin()
 
 const ANDTheme = {
   red: "#fe2b34",
+  black: 'black',
   heroFont: 'roboto',
   everydayFont: 'poppins',
 };
@@ -27,11 +31,9 @@ export class App extends React.Component {
       <MuiThemeProvider>
         <ThemeProvider theme={ANDTheme} >
           <FullScreen>
-            { this.props.user
-              && this.props.user.registrationCompleted
+            { !this.props.user
               && <Header /> }
             { this.props.user
-              && this.props.user.registrationCompleted
               && <SideBar /> }
             { this.props.children }
           </FullScreen>

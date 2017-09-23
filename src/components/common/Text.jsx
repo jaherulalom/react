@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
   font-family: ${props => props.theme.heroFont}
-  color: ${props => props.theme.red}
+  color: ${props => props.theme.black}
   font-size: 36px
 `;
 

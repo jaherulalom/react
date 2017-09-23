@@ -17,23 +17,26 @@ Axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 export const API = ((axios, state) => {
 
-  const setHeadersWithUserInfo = (userData, axios) => (
-    axios.create({
-      headers: {
-
-      },
-    })
-  );
+  // const setHeadersWithUserInfo = (userData, axios) => (
+  //   axios.create({
+  //     headers: {
+  //
+  //     },
+  //   })
+  // );
 
   return {
     loginUser: userDetails => (
       axios
-        .create()
-        .post('/login', userDetails)
+        .post('/userlogin', userDetails)
     ),
-    getService: domains => (
+    getService: domain => (
       axios
-        .get('/api/services')
+        .get('/api/get-available-packages')
+    ),
+    getAailableDays: AvailableDays => (
+      axios
+        .get('/api/get-available-days')
     ),
   };
 });

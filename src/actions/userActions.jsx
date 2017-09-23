@@ -7,11 +7,6 @@ export const success = data => ({
   ...data,
 });
 
-export const setServices = service => ({
-  type: 'SET_DOMAIN',
-  service,
-});
-
 const setSession = data => {
  localStorage.setItem('user-session-booking', JSON.stringify(data));
 };
@@ -28,6 +23,7 @@ export const submit = (values, api = API, Success = success) => (
       .loginUser(values)
       .then(({data}) => {
         dispatch(Success(data))
+        console.log(data);
         if (!data.user.registrationCompleted) {
           dispatch(push('/register'));
         } else {
@@ -38,14 +34,3 @@ export const submit = (values, api = API, Success = success) => (
 
   )
 );
-
-export const getServices = (api = API, set = setServices) => (
-  dispatch => (
-    api
-      .getService()
-      .then((response) => {
-        dispatch(set(response.data))
-        return response.data
-      })
-  )
-)

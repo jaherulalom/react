@@ -6,6 +6,8 @@ import { reducer as formReducer } from 'redux-form';
 
 
 import userReducer from '../reducers/userReducer';
+import serviceReducer from '../reducers/serviceReducer';
+import availabilityRedcuer from '../reducers/availabilityRedcuer';
 
 export const history = createHistory();
 
@@ -15,6 +17,8 @@ const reducer = combineReducers({
   router: routerReducer,
   form: formReducer,
   user: userReducer,
+  service: serviceReducer,
+  AvailableDays: availabilityRedcuer,
 });
 
 export const store = createStore(
